@@ -14,17 +14,20 @@
     "fix": "ultracite fix",
     "start": "node dist/main.js"
   },
+  "dependencies": {
+    "fastify": "5.12.1"
+  },
   "devDependencies": {
     "@biomejs/biome": "2.5.9",
-    "@types/node": "^26.2.0",
-    "tsx": "^4.23.12",
-    "typescript": "^7.0.2",
+    "@types/node": "26.2.0",
+    "tsx": "4.23.12",
+    "typescript": "7.0.2",
     "ultracite": "7.10.6"
   },
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
-      "version": "^11.13.0",
+      "version": "11.13.0",
       "onFail": "download"
     }
   }
