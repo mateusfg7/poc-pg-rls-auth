@@ -1,4 +1,19 @@
 {
+  "name": "poc-pg-rls-auth",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc",
+    "check": "ultracite check",
+    "dev": "tsx watch src/main.ts",
+    "fix": "ultracite fix",
+    "start": "node dist/main.js"
+  },
   "devDependencies": {
     "@biomejs/biome": "2.5.9",
     "@types/node": "^26.2.0",
@@ -6,21 +21,6 @@
     "typescript": "^7.0.2",
     "ultracite": "7.10.6"
   },
-  "name": "poc-pg-rls-auth",
-  "scripts": {
-    "dev": "tsx watch src/main.ts",
-    "build": "tsc",
-    "start": "node dist/main.js",
-    "check": "ultracite check",
-    "fix": "ultracite fix"
-  },
-  "type": "module",
-  "version": "1.0.0",
-  "description": "",
-  "main": "dist/main.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
