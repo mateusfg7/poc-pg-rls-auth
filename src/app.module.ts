@@ -1,31 +1,11 @@
 import { Module } from "@nestjs/common";
 import { AppService } from "./app.service.js";
 import { AppController } from "./app.controller.js";
-import { ConfigModule, ConfigService } from "@nestjs/config";
-import { DatabaseConfig, DatabaseConfigSchema } from "./database/config.js";
-import { DrizzlePostgresModule } from "@knaadh/nestjs-drizzle-postgres";
-import * as schema from "./database/schema/index.js";
+import { DatabaseModule } from "./database/database.module.js";
+import { AuthModule } from "./auth/auth.module.js";
 
 @Module({
-  imports: [
-    DrizzlePostgresModule.registerAsync({
-      tag: "DB_PROD",
-      inject: [ConfigService],
-      imports: [
-        ConfigModule.forRoot({
-          validationSchema: DatabaseConfigSchema,
-        }),
-      ],
-      useFactory: (config: ConfigService<DatabaseConfig>) => ({
-        postgres: {
-          url: config.getOrThrow("DATABASE_URL"),
-        },
-        config: {
-          schema: { ...schema },
-        },
-      }),
-    }),
-  ],
+  imports: [DatabaseModule, AuthModule],
   controllers: [AppController],
   providers: [AppService],
 })
