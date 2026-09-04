@@ -6,7 +6,7 @@ import schema from "./schema/index.js";
 export function useDatabaseFactory(config: ConfigService<DatabaseConfig>): DrizzlePostgresConfig {
   return {
     postgres: {
-      url: config.getOrThrow("DATABASE_URL"),
+      url: config.getOrThrow("APP_DATABASE_URL"),
     },
     config: {
       schema,

@@ -8,6 +8,7 @@ import {
   uniqueIndex,
   varchar,
 } from "drizzle-orm/pg-core";
+import { todo } from "./todo.js";
 
 export const user = pgTable("user", {
   id: text("id").primaryKey(),
@@ -128,6 +129,7 @@ export const userRelations = relations(user, ({ many }) => ({
   accounts: many(account),
   members: many(member),
   invitations: many(invitation),
+  todos: many(todo),
 }));
 
 export const sessionRelations = relations(session, ({ one }) => ({
@@ -146,6 +148,7 @@ export const accountRelations = relations(account, ({ one }) => ({
 
 export const organizationRelations = relations(organization, ({ many }) => ({
   members: many(member),
+  todos: many(todo),
 }));
 
 export const memberRelations = relations(member, ({ one }) => ({

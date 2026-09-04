@@ -13,6 +13,7 @@ import {
   organization,
   organizationRelations,
 } from "./auth.js";
+import { todo, todoRelations } from "./todo.js";
 
 export default {
   account,
@@ -28,4 +29,6 @@ export default {
   memberRelations,
   organization,
   organizationRelations,
+  todo,
+  todoRelations,
 };
