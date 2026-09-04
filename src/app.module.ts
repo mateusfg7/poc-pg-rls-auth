@@ -4,7 +4,7 @@ import { AppController } from "./app.controller.js";
 import { ConfigModule, ConfigService } from "@nestjs/config";
 import { DatabaseConfig, DatabaseConfigSchema } from "./database/config.js";
 import { DrizzlePostgresModule } from "@knaadh/nestjs-drizzle-postgres";
-import * as schema from "./database/schema.js";
+import * as schema from "./database/schema/index.js";
 
 @Module({
   imports: [
