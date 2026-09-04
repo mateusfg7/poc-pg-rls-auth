@@ -11,10 +11,10 @@ export class AppService {
 
   async getHello(): Promise<string> {
     const users = await this.db.run((tx) => tx.select().from(schema.user));
-    const organizations = await this.db.run((tx) => tx.select().from(schema.organization));
+    const orgs = await this.db.run((tx) => tx.select().from(schema.organization));
+    const todos = await this.db.run((tx) => tx.select().from(schema.todo));
 
-    this.logger.log(users);
-    this.logger.log(organizations);
+    this.logger.log({ users, orgs, todos });
 
     return "Hello World!";
   }
