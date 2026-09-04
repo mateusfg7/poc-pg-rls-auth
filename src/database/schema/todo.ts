@@ -1,6 +1,8 @@
 import { boolean, pgPolicy, pgTable, text, timestamp, uuid } from "drizzle-orm/pg-core";
-import { organization, user } from "./auth.js";
+
 import { relations, sql } from "drizzle-orm";
+import { user } from "./auth/user.js";
+import { organization } from "./auth/organization.js";
 
 export const todo = pgTable(
   "todo",
